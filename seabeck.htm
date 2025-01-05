@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb House Manual</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .container:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #34495e;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 4px solid #3498db;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        ul li strong {
+            color: #2980b9;
+        }
+        .toggle {
+            color: #2980b9;
+            font-weight: bold;
+            border-bottom: 2px dashed #2980b9;
+        }
+        .hidden {
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .stove-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .stove-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .info-box {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f1f8ff;
+            border-left: 4px solid #0078d4;
+            border-radius: 6px;
+        }
+    </style>
+    <script>
+        function toggleVisibility(id) {
+            const section = document.getElementById(id);
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Seabeck Aframe Stay!</h1>
+        <p>We are delighted to host you. Below is a guide to help you make the most of your stay and ensure everything runs smoothly.</p>
+		
+		<h2 class="toggle" onclick="toggleVisibility('house-info')">House Information</h2>
+        <ul id="house-info" class="hidden">
+            <li>Address: 19018 NW Stavis Bay Rd, Seabeck, WA 98380</li>
+            <li onclick="toggleVisibility('master-bedroom-info')">Master Bedroom </li>
+			<div id="master-bedroom-info" class="hidden">
+                <div class='info-box'>
+                    <p>King Bed, Purple Matress, Light switch is on right and you can turn on the mood light near the end of the light string</p>
+                </div>
+            </div>
+            <li>Property: 0.99 acres with a view of Hood Canal</li>
+            <li>Built in 1964 and renovated in 2024</li>
+            <li>Features: A-frame style, large deck, hot tub, indoor vintage fireplace, outdoor firepit</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('checkin')">Check-In & Check-Out</h2>
+        <ul id="checkin" class="hidden">
+            <li><strong>Check-In:</strong> After 4:00 PM</li>
+            <li><strong>Check-Out:</strong> By 11:00 AM</li>
+            <li>For early check-in or late check-out requests, please contact us in advance.</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('wifi')">Wi-Fi Information</h2>
+        <ul id="wifi" class="hidden">
+            <li><strong>Network Name:</strong> CabinWiFi</li>
+            <li><strong>Password:</strong> CozyStay2025</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('kitchen')">Kitchen</h2>
+        <ul id="kitchen" class="hidden">
+            <li onclick="toggleVisibility('stove-info')">Modern 4-burner electric cooktop with downdraft vent</li>
+            <div id="stove-info" class="hidden">
+                <div class='stove-image'>
+                    <img src='https://m.media-amazon.com/images/I/51A5uxPS0qL._AC_SX679_.jpg' alt='Stove Image'>
+                </div>
+                <div class='info-box'>
+                    <p><strong>3-Speed Downdraft Exhaust System:</strong> This feature effectively pulls smoke, steam, and cooking odors away from the stove area, keeping the kitchen fresh and clean.</p>
+                </div>
+            </div>
+            <li>Mid-size table-top oven, air fryer, popcorn maker</li>
+            <li>Complimentary coffee beans, coffee grinder, Ninja coffee maker, tea, and hot chocolate</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('hottub')">Hot Tub</h2>
+        <ul id="hottub" class="hidden">
+            <li>7-person capacity</li>
+            <li>Please rinse before use and follow posted guidelines.</li>
+            <li><strong>Important:</strong> Please keep the hot tub covered when not in use to save energy and keep it clean.</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('livingroom-fireplace')">Livingroom Fireplace</h2>
+        <ul id="livingroom-fireplace" class="hidden">
+            <li>Ensure the chimney vent is open before starting a fire.</li>
+            <li>Firewood is not provided; please bring your own or purchase locally.</li>
+            <li>Never leave the fire unattended and ensure it is completely out before leaving or going to bed.</li>
+            <li>The fire extinguisher is located underneath the kitchen sink, if needed.</li>
+            
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('outside-firepit')">Outside Firepit</h2>
+        <ul id="outside-firepit" class="hidden">
+            <li>We provide a Solo Stove for your use, which ensures a smokeless and efficient fire.</li>
+            <li>Firewood must be purchased or brought by guests, as it is not provided.</li>
+            <li>To use the Solo Stove:
+                <ul>
+                    <li>Place the stove on a flat, non-flammable surface away from overhanging branches.</li>
+                    <li>Add small pieces of kindling to start, then gradually add larger pieces of wood.</li>
+                    <li>Do not overfill the stove to ensure proper airflow.</li>
+                    <li>Never leave the firepit unattended and make sure it is completely extinguished after use.</li>
+                </ul>
+            </li>
+            <li>Please refer to the safety instructions provided with the stove for detailed guidance.</li>
+            <div class="stove-image">
+                <img src="https://m.media-amazon.com/images/I/51Qj-O9SBcL._AC_SL1080_.jpg" alt="Solo Stove Image">
+            </div>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('rules')">House Rules</h2>
+        <ul id="rules" class="hidden">
+            <li>No smoking inside the property.</li>
+            <li>No late check-ins; please arrive between 4:00 PM and 9:00 PM.</li>
+            <li>Maximum of 6 guests. No overnight visitors allowed beyond the registered number.</li>
+            <li>Be cautious when using the fireplace. Ensure the vent is open to avoid smoke indoors.</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('things')">Things to Do Nearby</h2>
+        <ul id="things" class="hidden">
+            <li><strong>Seabeck Olympic View Marina:</strong> Beach access, pizza, coffee, and a convenience store (9 minutes away).</li>
+            <li><strong>Guillemot Cove Nature Reserve:</strong> Walking trails and pebble beach access (1 minute away).</li>
+            <li><strong>Scenic Beach State Park:</strong> Public beach and scenic views (10 minutes away).</li>
+            <li><strong>Big Beef Creek Bridge:</strong> Popular for birdwatching and bald eagles (20 minutes away).</li>
+        </ul>
+
+        <h2 class="toggle" onclick="toggleVisibility('emergency')">Emergency Contact</h2>
+        <ul id="emergency" class="hidden">
+            <li>For urgent issues, please contact Tom at <strong>(555) 123-4567</strong>.</li>
+        </ul>
+
+        <p>We hope you have a fantastic stay! If you need anything, don't hesitate to reach out.</p>
+        <div class="footer">&copy; 2025 Airbnb Cabin Manual</div>
+    </div>
+</body>
+</html>
